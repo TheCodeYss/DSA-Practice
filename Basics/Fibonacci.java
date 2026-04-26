@@ -1,30 +1,35 @@
-import java.util.*;
+import java.util.Scanner;
 
+/**
+ * This program prints the Fibonacci sequence up to a user-defined number of terms.
+ */
 public class Fibonacci {
+
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        // input: how many numbers you want
+        int first = 0;
+        int second = 1;
+
         System.out.print("Enter the number of terms: ");
-        int n = sc.nextInt();
+        int terms = scanner.nextInt();
 
-        // handle invalid input
-        if (n <= 0) {
-            System.out.println("Enter a positive number");
+        //invalid input
+        if (terms <= 0) {
+            System.out.println("Invalid input. Please enter a positive integer.");
         } else {
+            System.out.println("Fibonacci sequence:");
 
-            int f1 = 0, f2 = 1;
+            for (int i = 0; i < terms; i++) {
+                System.out.print(first + " ");
 
-            for (int i = 1; i <= n; i++) {
-                System.out.print(f1 + " ");
-
-                int next = f1 + f2;
-                f1 = f2;
-                f2 = next;
+                int next = first + second;
+                first = second;
+                second = next;
             }
         }
 
-        sc.close();
+        scanner.close();
     }
 }
