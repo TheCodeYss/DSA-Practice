@@ -5,13 +5,9 @@ public class Anagram {
 
         Scanner sc = new Scanner(System.in);
 
-        // input
-        String str1 = sc.nextLine().toLowerCase();
-        String str2 = sc.nextLine().toLowerCase();
-
-        // remove spaces
-        str1 = str1.replaceAll("\\s", "");
-        str2 = str2.replaceAll("\\s", "");
+        // input and preprocessing
+        String str1 = sc.nextLine().toLowerCase().replaceAll("\\s", "");
+        String str2 = sc.nextLine().toLowerCase().replaceAll("\\s", "");
 
         // length check
         if(str1.length() != str2.length()){
@@ -19,25 +15,15 @@ public class Anagram {
             return;
         }
 
-        // convert to char array
+        // convert to char array and sort
         char[] a = str1.toCharArray();
         char[] b = str2.toCharArray();
 
-        // sort arrays
         Arrays.sort(a);
         Arrays.sort(b);
 
         // compare arrays
-        boolean isAnagram = true;
-
-        for(int i = 0; i < a.length; i++){
-            if(a[i] != b[i]){
-                isAnagram = false;
-                break;
-            }
-        }
-
-        if(isAnagram){
+        if(Arrays.equals(a, b)){
             System.out.println("Anagram");
         } else {
             System.out.println("Not Anagram");
