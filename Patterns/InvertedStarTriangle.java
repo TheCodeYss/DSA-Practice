@@ -1,15 +1,30 @@
+// Inverted star triangle (n = 4):
+// ****
+// ***
+// **
+// *
+//
+// Time Complexity  : O(n^2)
+// Space Complexity : O(1)
+
 public class InvertedStarTriangle {
-    
-    public static void Star(int n,int m){
-    
-        for(int i=n;i>=1;i--){
-            for(int j=0;j<i;j++){
-               System.out.print("*");
+
+    public static void printInvertedStar(int n) {
+
+        // each row has i stars, and i decreases by 1
+        for (int i = n; i >= 1; i--) {
+
+            // print i stars in this row
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
             }
+
+            // go to next line
             System.out.println();
         }
     }
+
     public static void main(String[] args) {
-    Star(4,4);    
-}    
+        printInvertedStar(4);
+    }
 }
