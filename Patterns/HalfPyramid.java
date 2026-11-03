@@ -1,3 +1,11 @@
+// Half pyramid number pattern (n = 4):
+// 1
+// 12
+// 123
+// 1234
+//
+// Time Complexity  : O(n^2)
+// Space Complexity : O(1)
 public class HalfPyramid {
 
     // Prints half pyramid number pattern
